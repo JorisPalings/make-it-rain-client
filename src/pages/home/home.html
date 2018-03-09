@@ -1,17 +1,30 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
+  <!-- <ion-slides
+    [direction]="'vertical'"
+    [loop]="true"
+    (ionSlideWillChange)="handleSlideWillChange($event)">
+    <ion-slide>
+      <div
+        class="dollar-bill">
+        <h1
+          class="dollar-sign">
+          $
+        </h1>
+      </div>
+    </ion-slide>
+  </ion-slides> -->
+  <p *ngIf="position">
+    {{position?.latitude}}&deg;
   </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
+  <p *ngIf="position">
+    {{position?.longitude}}&deg;
   </p>
+  <p *ngIf="heading">
+    {{heading}}&deg;
+  </p>
+  <ul *ngIf="clientsInFOV">
+    <li *ngFor="let client of clientsInFOV">
+      {{client.id}}
+    </li>
+  </ul>
 </ion-content>

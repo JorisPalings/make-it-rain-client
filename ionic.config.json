@@ -1,6 +1,8 @@
 {
-  "name": "make-it-rain",
+  "name": "make-it-rain-client",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }
